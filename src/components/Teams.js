@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import '../App.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
 class Teams extends Component {
     render() {
@@ -7,7 +8,9 @@ class Teams extends Component {
         return (
             <div className="teams">
             {teams.map(team => (
-                <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo" key={team.id} />
+                <Link to={`teams/${team.id}`} key={team.id}>
+                    <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo" />
+                </Link>
             ))}
             </div>
         )

@@ -43,16 +43,13 @@ class App extends Component {
             <div>
               {this.state.teams.length > 0 ? (
                 <div>
-                  <h2>Eastern Conference</h2>
-                    <h3>Metropolitan</h3>
-                      <Teams teams={this.filterTeams('M')} />
-                    <h3>Atlantic</h3>
-                      <Teams teams={this.filterTeams('A')} />
-                    <h2>Western Conference</h2>
-                      <h3>Central</h3>
-                        <Teams teams={this.filterTeams('C')} />
-                      <h3>Pacific</h3>
-                        <Teams teams={this.filterTeams('P')} />
+                <nav>
+                  <ul className="team-list">
+                    <Teams teams={this.state.teams} />
+                  </ul>
+                </nav>
+                <main>
+                </main>
                 </div>
               ) : (
                 <p>Loading...</p>

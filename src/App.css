@@ -1,7 +1,10 @@
-
+.team-list {
+  list-style: none;
+}
 
 .team-logo {
   height: 80px;
+  padding-bottom: 25px;
 }
 /* Team Stats */
 

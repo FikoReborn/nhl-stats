@@ -1,18 +1,34 @@
 .team-list {
   list-style: none;
+  padding: 0;
+  text-align: center;
 }
 
 .team-logo {
   height: 80px;
-  padding-bottom: 25px;
 }
+
+.nhl-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%
+}
+
+nav {
+  width: 10%;
+}
+
+main {
+  width: 90%;
+  text-align: left;
+}
+
 /* Team Stats */
 
 .stats {
   display: grid;
   grid-template-columns: 1fr 3fr;
   width: 60%;
-  margin: auto;
 }
 
 .stats .logo-container {
@@ -48,9 +64,11 @@
 }
 
 .stats .team-stats .stat-title {
-  width: 20%;
+  grid-column: 1 / 2;
+  height: 20px;
 }
 
 .stats .team-stats .stat-value {
-  width: 50%;
+  grid-column: 2 / 3;
+  height: 20px;
 }

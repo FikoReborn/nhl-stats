@@ -29,44 +29,38 @@ class TeamStats extends Component {
                     </div>
                     <div className="team-stats">
                     <div className="stat-window">
-                        <div className="stat-title">
-                            Games Played:
-                        </div>
-
-                        <div className="stat-value">
-                            {statValue.gamesPlayed}
-                        </div>
-                        <div className="stat-title">
-                            Wins:
-                        </div>
-
-                        <div className="stat-value">
-                            {statValue.wins} ({statPlace.wins})
-                        </div>
-                        
-                        <div className="stat-title">
-                            Losses:
-                        </div>
-
-                        <div className="stat-value">
-                            {statValue.losses} ({statPlace.losses})
-                        </div>
-
-                        <div className="stat-title">
-                            Overtime Losses:
-                        </div>
-
-                        <div className="stat-value">
-                            {statValue.ot} ({statPlace.ot})
-                        </div>
-
-                        <div className="stat-title">
-                            Points: 
-                        </div>
-
-                        <div className="stat-value">
-                            {statValue.pts} ({statPlace.pts})
-                        </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Games Played:</th>
+                                <td>{statValue.gamesPlayed}</td>
+                            </tr>
+                            <tr>
+                                <th>Wins:</th>
+                                <td>{statValue.wins} ({statPlace.wins})</td>
+                            </tr>
+                            <tr>
+                                <th>Losses:</th>
+                                <td>{statValue.losses} ({statPlace.losses})</td>
+                            </tr>
+                            <tr>
+                                <th>OT Losses:</th>
+                                <td>{statValue.ot} ({statPlace.ot})</td>
+                            </tr>
+                            <tr>
+                                <th>Points:</th>
+                                <td>{statValue.pts} ({statPlace.pts})</td>
+                            </tr>
+                            <tr>
+                                <th>Power Play:</th>
+                                <td>{statValue.powerPlayPercentage}% ({statPlace.powerPlayPercentage})</td>
+                            </tr>
+                            <tr>
+                                <th>Penalty Kill:</th>
+                                <td>{statValue.penaltyKillPercentage}% ({statPlace.penaltyKillPercentage})</td>
+                            </tr>
+                            </tbody>
+                    </table>
                     </div>
                     </div>
                     <div className="roster">

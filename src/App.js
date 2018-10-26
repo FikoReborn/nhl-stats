@@ -36,33 +36,30 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header" />
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <div>
-              {this.state.teams.length > 0 ? (
-                <div>
-                <nav>
-                  <ul className="team-list">
-                    <Teams teams={this.state.teams} />
-                  </ul>
-                </nav>
-                <main>
-                </main>
-                </div>
-              ) : (
-                <p>Loading...</p>
-              )}
+        <div>
+          {this.state.teams.length > 0 ? (
+            <div className="nhl-container">
+              <nav>
+                <ul className="team-list">
+                  <Teams teams={this.state.teams} />
+                </ul>
+              </nav>
+              <main>
+                <Route
+                  path="/teams/:id"
+                  render={props => (
+                    <TeamStats
+                      teams={this.state.teams}
+                      id={props.match.params.id}
+                    />
+                  )}
+                />
+              </main>
             </div>
+          ) : (
+            <p>Loading...</p>
           )}
-        />
-        <Route
-          path="/teams/:id"
-          render={props => (
-            <TeamStats teams={this.state.teams} id={props.match.params.id} />
-          )}
-        />
+        </div>
       </div>
     );
   }

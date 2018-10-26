@@ -9,7 +9,7 @@ class Teams extends Component {
             <div className="teams">
             {teams.map(team => (
                 <li key={team.id}>
-                    <Link to={`teams/${team.id}`}>
+                    <Link to={`/teams/${team.id}`}>
                         <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo" />
                     </Link>
                 </li>

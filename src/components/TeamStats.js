@@ -16,7 +16,7 @@ class TeamStats extends Component {
                 {team ? (
                     <div className="stats">
                     <div className="logo-container">
-                        <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo" />
+                        <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo-stats" />
                     </div>
                     <div className="conference">
                         {team.conference.name} Conference

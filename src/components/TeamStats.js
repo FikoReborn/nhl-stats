@@ -3,7 +3,7 @@ import '../App.js';
 
 class TeamStats extends Component {
     render() {
-        const team = this.props.teams[this.props.id - 1];
+        const team = this.props.teams[this.props.id];
         let statValue;
         let statPlace;
         if (team) {

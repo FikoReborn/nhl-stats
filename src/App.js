@@ -19,9 +19,11 @@ class App extends Component {
     )
       .then(response => response.json())
       .then(data => {
-        this.setState({
-          teams: data.teams
-        });
+        let newTeams = data.teams;
+        for (let i = 0; i < newTeams.length; i++) {
+          newTeams[i].id = i;
+        }
+        this.setState({teams:newTeams});
       })
       .catch(err => console.log(err));
   };

@@ -8,7 +8,7 @@ class Teams extends Component {
         return (
             <div className="teams">
             {teams.map(team => (
-                <li key={team.id}>
+                <li key={team.name}>
                     <Link to={`/teams/${team.id}`}>
                         <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo" /> {team.name}
                     </Link>

@@ -71,6 +71,10 @@ main {
   grid-row: 4 / 5;
 }
 
+.stats .roster .players-table {
+  border-spacing: 15px;
+}
+
 .stats .team-stats {
   display: flex;
   flex-wrap: nowrap;

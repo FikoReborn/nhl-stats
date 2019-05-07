@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import sort from 'fast-sort';
 import '../App.js';
 
 class TeamStats extends Component {
     render() {
         const team = this.props.teams[this.props.id];
+        let teamRoster = team.roster.roster;
+        sort(teamRoster).by([
+            { desc: t => t.position.type },
+            { asc: n => n.person.fullName.substring(n.person.fullName.indexOf(' ')+1) }
+        ]);
         let statValue;
         let statPlace;
         if (team) {
@@ -73,11 +79,11 @@ class TeamStats extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {team.roster.roster.map(player => (
+                                {teamRoster.map(player => (
                                     <tr key={player.person.id}>
                                         <td>{player.jerseyNumber}</td>
                                         <td>{player.person.fullName}</td>
-                                        <td>{player.position.name}</td>
+                                        <td>{player.position.abbreviation}</td>
                                     </tr>
                                 ))}
                             </tbody>

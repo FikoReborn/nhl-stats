@@ -92,7 +92,7 @@ class TeamStats extends Component {
                             </thead>
                             <tbody>
                                 {teamRoster.map(player => (
-                                    <tr key={player.person.id}>
+                                    <tr key={player.person.id} className="player-row">
                                         <td>{player.jerseyNumber}</td>
                                         <td>{player.person.fullName}</td>
                                         <td>{player.position.abbreviation}</td>

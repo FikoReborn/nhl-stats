@@ -72,7 +72,21 @@ main {
 }
 
 .stats .roster .players-table {
-  border-spacing: 15px;
+  border-spacing: 0;
+}
+
+.stats .roster .players-table td {
+  padding: 10px;
+}
+
+.stats .roster .players-table .player-row {
+  padding: 15px;
+}
+
+.stats .roster .players-table .player-row:hover {
+  color: #fff;
+  background-color: rgb(49, 125, 175);
+  cursor: pointer;
 }
 
 .stats .team-stats {

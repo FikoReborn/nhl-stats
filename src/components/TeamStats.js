@@ -6,10 +6,22 @@ class TeamStats extends Component {
     render() {
         const team = this.props.teams[this.props.id];
         let teamRoster = team.roster.roster;
+        // Sort team roster
         sort(teamRoster).by([
             { desc: t => t.position.type },
             { asc: n => n.person.fullName.substring(n.person.fullName.indexOf(' ')+1) }
         ]);
+        let count = 0;
+        // Count goalies, then shift/push to end of array
+        teamRoster.forEach(player => {
+            if (player.position.type === "Goalie") {
+                count++;
+            }
+        });
+        for (let i = 0; i < count; i++) {
+            teamRoster.push(teamRoster.shift());
+        }
+        count = 0;
         let statValue;
         let statPlace;
         if (team) {

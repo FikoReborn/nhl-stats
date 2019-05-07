@@ -73,6 +73,16 @@ main {
 
 .stats .roster .players-table {
   border-spacing: 0;
+  border: 1px solid #000;
+  border-radius: 20px 20px 0 0;
+}
+
+.stats .roster .players-table th {
+  padding: 10px;
+  background-color: #000;
+  border-radius: 20px 20px 0 0;
+  color: #fff;
+  text-align: center;
 }
 
 .stats .roster .players-table td {

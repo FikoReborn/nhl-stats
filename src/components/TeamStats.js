@@ -85,9 +85,9 @@ class TeamStats extends Component {
                         <table className="players-table">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Player Name</th>
-                                    <th>Position</th>
+                                    
+                                    <th colspan="3">Team Roster</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>

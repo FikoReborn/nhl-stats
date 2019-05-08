@@ -6,9 +6,11 @@ import '../App.js';
 
 class TeamStats extends Component {
     state = {
+        selectedPlayer: null,
         change: false
     }
     handlePlayer = (playerid) => {
+        this.setState({selectedPlayer:playerid});
         this.props.pullPlayerInfo(playerid);
         this.props.pullPlayerStats(playerid);
         this.setState({change:true})
@@ -101,7 +103,11 @@ class TeamStats extends Component {
                                 </thead>
                                 <tbody>
                                     {teamRoster.map(player => (
-                                        <tr key={player.person.id} className="player-row" onClick={() => this.handlePlayer(player.person.id)}>
+                                        <tr 
+                                            key={player.person.id} 
+                                            className={player.person.id === this.state.selectedPlayer ? 'active' : 'player-row'} 
+                                            onClick={() => this.handlePlayer(player.person.id)}
+                                            >
                                                 <td>{player.jerseyNumber}</td>
                                                 <td>{player.person.fullName}</td>
                                                 <td>{player.position.abbreviation}</td>

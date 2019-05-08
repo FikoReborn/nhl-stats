@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import sort from 'fast-sort';
+import { Route, withRouter } from 'react-router-dom';
 import PlayerStats from './PlayerStats';
 import '../App.js';
 
@@ -11,6 +12,7 @@ class TeamStats extends Component {
         this.props.pullPlayerInfo(playerid);
         this.props.pullPlayerStats(playerid);
         this.setState({change:true})
+        this.props.history.push('/teams/' + this.props.id + '/player/' + playerid)
     }
     render() {
         
@@ -38,7 +40,6 @@ class TeamStats extends Component {
             statValue = team.teamStats[0].splits[0].stat;
             statPlace = team.teamStats[0].splits[1].stat;
         }
-        console.log(team);
         return (
             <div>
                 {team ? (
@@ -109,13 +110,16 @@ class TeamStats extends Component {
                                 </tbody>
                             </table>
                         </div>
-
+                        <Route
+                  path="/teams/:id/player/:pid"
+                  render={props => (
                             <PlayerStats
                             playerStats={this.props.playerStats}
                             playerInfo={this.props.playerInfo}
                             
                             />
-
+                            )}
+                            />
                             
                     </div>
                     
@@ -126,4 +130,4 @@ class TeamStats extends Component {
     }
 }
 
-export default TeamStats;
+export default withRouter(TeamStats);

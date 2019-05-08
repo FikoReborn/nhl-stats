@@ -124,3 +124,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.stats .player-info ul li {
+  list-style: none;
+}

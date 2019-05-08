@@ -48,7 +48,9 @@ class App extends Component {
       )
       .then(response => response.json())
       .then(data => {
+        if (data.stats[0].splits.length >= 1) {
           this.setState({playerStats:data.stats[0].splits[0].stat})
+        }
       })
   }
 

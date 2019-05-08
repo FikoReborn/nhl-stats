@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import sort from 'fast-sort';
-import { Link, Route } from 'react-router-dom';
 import PlayerStats from './PlayerStats';
 import '../App.js';
 
 class TeamStats extends Component {
+    state = {
+        change: false
+    }
+    handlePlayer = (playerid) => {
+        this.props.pullPlayerInfo(playerid);
+        this.props.pullPlayerStats(playerid);
+        this.setState({change:true})
+    }
     render() {
+        
         const team = this.props.teams[this.props.id];
         let teamRoster = team.roster.roster;
         // Sort team roster
@@ -92,23 +100,23 @@ class TeamStats extends Component {
                                 </thead>
                                 <tbody>
                                     {teamRoster.map(player => (
-                                        <tr key={player.person.id} className="player-row">
+                                        <tr key={player.person.id} className="player-row" onClick={() => this.handlePlayer(player.person.id)}>
                                                 <td>{player.jerseyNumber}</td>
-                                                <td><Link to={`/teams/${team.id}/player/${player.person.id}`}>{player.person.fullName}</Link></td>
+                                                <td>{player.person.fullName}</td>
                                                 <td>{player.position.abbreviation}</td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
                         </div>
-                        <Route
-                            path="/teams/:id/player/:pid"
-                            render={props => (
-                                <PlayerStats
-                                id={props.match.params.pid}
-                                />
-                            )}
-                        />
+
+                            <PlayerStats
+                            playerStats={this.props.playerStats}
+                            playerInfo={this.props.playerInfo}
+                            
+                            />
+
+                            
                     </div>
                     
 

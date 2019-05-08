@@ -3,45 +3,31 @@ import '../App.js';
 
 class PlayerStats extends Component {
     state = {
-        playerInfo: [],
-        playerStats: [],
-        error: false
+        error: false,
       };
-    
-    componentDidMount = () => {
-    this.pullPlayerInfo();
-    this.pullPlayerStats();
-    };
-
-    pullPlayerInfo = () => {
-        fetch(
-            'https://statsapi.web.nhl.com/api/v1/people/' + this.props.id
-        )
-        .then(response => response.json())
-        .then(data => {
-        this.setState({playerInfo:data.people[0]});
-        })
-        .catch(err => console.log(err));
-    };
-
-    pullPlayerStats = () => {
-        fetch(
-            'https://statsapi.web.nhl.com/api/v1/people/' + this.props.id + '/stats?stats=statsSingleSeason'
-        )
-        .then(response => response.json())
-        .then(data => {
-            this.setState({playerStats:data.stats[0].splits[0].stat})
-        })
-    }
 
     render() {
-        const player = [];
+        const player = this.props.playerInfo;
+        const playerStats = this.props.playerStats;
         return (
-            <div>
-                {player ? (
-                    <div>test</div>
+            <div className="player-info" key={player.id}>
 
-                ) : (<p>Loading...</p>)}
+                    <div>
+                        <div className="info">
+                            <h3>{player.fullName}</h3>
+                            <ul>
+                                <li>{player.birthCity}, {player.birthStateProvince}, {player.birthCountry}</li>
+                                <li>Birthdate: {player.birthDate}</li>
+                                <li>{player.height}</li>
+                                <li>{player.weight} lbs</li>
+                            </ul>
+                        </div>
+                        <div className="player-stats">
+test
+                        </div>
+                    </div>
+
+
             </div>
         )
     }

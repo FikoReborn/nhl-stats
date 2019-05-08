@@ -6,6 +6,8 @@ import './App.css';
 
 class App extends Component {
   state = {
+    playerStats: [],
+    playerInfo: [],
     teams: [],
     error: false
   };
@@ -27,6 +29,28 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   };
+
+  pullPlayerInfo = (playerid) => {
+    this.forceUpdate();
+    fetch(
+        'https://statsapi.web.nhl.com/api/v1/people/' + playerid
+    )
+    .then(response => response.json())
+    .then(data => {
+    this.setState({playerInfo:data.people[0]});
+    })
+    .catch(err => console.log(err));
+  };
+
+  pullPlayerStats = (playerid) => {
+      fetch(
+          'https://statsapi.web.nhl.com/api/v1/people/' + playerid + '/stats?stats=statsSingleSeason'
+      )
+      .then(response => response.json())
+      .then(data => {
+          this.setState({playerStats:data.stats[0].splits[0].stat})
+      })
+  }
 
   filterTeams = division => {
     return this.state.teams.filter(
@@ -52,6 +76,10 @@ class App extends Component {
                   render={props => (
                     <TeamStats
                       teams={this.state.teams}
+                      playerStats={this.state.playerStats}
+                      playerInfo={this.state.playerInfo}
+                      pullPlayerInfo={this.pullPlayerInfo}
+                      pullPlayerStats={this.pullPlayerStats}
                       id={props.match.params.id}
                     />
                   )}

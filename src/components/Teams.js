@@ -7,6 +7,7 @@ class Teams extends Component {
         const teams = this.props.teams;
         return (
             <div className="teams">
+            <li className="nav-title-link"><Link to="/standings">Standings</Link></li>
             {teams.map(team => (
                 <li key={team.name}>
                     <Link to={`/teams/${team.id}`}>

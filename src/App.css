@@ -28,6 +28,12 @@ nav {
   background-color: #000;
 }
 
+nav .nav-title-link {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
 main {
   width: 90%;
   text-align: left;

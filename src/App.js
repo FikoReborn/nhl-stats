@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Teams from './components/Teams';
 import TeamStats from './components/TeamStats';
+import Standings from './components/Standings';
 import { Route } from 'react-router-dom';
 import './App.css';
 
@@ -84,6 +85,12 @@ class App extends Component {
                       pullPlayerStats={this.pullPlayerStats}
                       id={props.match.params.id}
                     />
+                  )}
+                />
+                <Route
+                  path="/standings"
+                  render={() => (
+                    <Standings />
                   )}
                 />
               </main>

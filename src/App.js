@@ -37,8 +37,44 @@ class App extends Component {
     fetch('https://statsapi.web.nhl.com/api/v1/standings?expand=standings.record')
     .then(response => response.json())
     .then(data => {
+      let metro = [];
+      let atlantic = [];
+      let central = [];
+      let pacific = [];
+      let EasternWildcard = [];
+      let WesternWildcard = [];
       this.setState({standings:data.records});
-    })
+      this.state.standings.forEach(division => {
+        if (division.conference.name === "Eastern") {
+          division.teamRecords.forEach(team => {
+            if (team.wildCardRank > 0) {
+              EasternWildcard.push(team)
+            }
+          })
+        }
+        if (division.conference.name === "Western") {
+          division.teamRecords.forEach(team => {
+            if (team.wildCardRank > 0) {
+              WesternWildcard.push(team);
+            }
+          })
+        }
+        division.teamRecords.forEach(team => {
+          if (team.divisionRank <= 3 && division.division.abbreviation === "M") {
+            metro.push(team);
+          } else if (team.divisionRank <= 3 && division.division.abbreviation === "A") {
+            atlantic.push(team);
+          } else if (team.divisionRank <= 3 && division.division.abbreviation === "C") {
+            central.push(team);
+          } else if (team.divisionRank <= 3 && division.division.abbreviation === "P") {
+            pacific.push(team);
+          }
+        })
+      })
+      this.setState({EasternWildcard:EasternWildcard, WesternWildcard:WesternWildcard})
+      this.setState({metro:metro,atlantic:atlantic,central:central,pacific:pacific})
+      }
+      )
     .catch(err => console.log(err))
   }
 

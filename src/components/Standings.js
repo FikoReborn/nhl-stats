@@ -4,16 +4,6 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 class Standings extends Component {
-    state = {
-        loadedConfs: []
-    }
-
-    trackConfs = (conf) => {
-        let addConf = this.state.loadedConfs;
-        addConf.push(conf);
-        this.setState({loadedConfs:addConf})
-    }
-
     render() {
         return (
             <div className="standings">

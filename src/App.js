@@ -10,7 +10,6 @@ class App extends Component {
     playerStats: [],
     playerInfo: [],
     teams: [],
-    standings: [],
     metro: [],
     atlantic: [],
     central: [],
@@ -49,22 +48,17 @@ class App extends Component {
       let pacific = [];
       let easternWildCard = [];
       let westernWildCard = [];
-      this.setState({standings:data.records});
-      this.state.standings.forEach(division => {
-        if (division.conference.name === "Eastern") {
-          division.teamRecords.forEach(team => {
-            if (team.wildCardRank > 0) {
-              easternWildCard.push(team)
-            }
-          })
-        }
-        if (division.conference.name === "Western") {
-          division.teamRecords.forEach(team => {
-            if (team.wildCardRank > 0) {
-              westernWildCard.push(team);
-            }
-          })
-        }
+      data.records.forEach(division => {
+        division.teamRecords.forEach(team => {
+          if (division.conference.name === "Eastern" && team.wildCardRank > 0) {
+            easternWildCard.push(team)
+          }
+        })
+        division.teamRecords.forEach(team => {
+          if (division.conference.name === "Western" && team.wildCardRank > 0) {
+            westernWildCard.push(team);
+          }
+        })
         division.teamRecords.forEach(team => {
           if (team.divisionRank <= 3 && division.division.abbreviation === "M") {
             metro.push(team);
@@ -77,8 +71,14 @@ class App extends Component {
           }
         })
       })
-      this.setState({easternWildCard:easternWildCard, westernWildCard:westernWildCard})
-      this.setState({metro:metro,atlantic:atlantic,central:central,pacific:pacific})
+      this.setState({
+        easternWildCard:easternWildCard, 
+        westernWildCard:westernWildCard,
+        metro:metro,
+        atlantic:atlantic,
+        central:central,
+        pacific:pacific
+      })
       }
       )
     .catch(err => console.log(err))
@@ -144,7 +144,6 @@ class App extends Component {
                   exact path="/"
                   render={() => (
                     <Standings 
-                      standings={this.state.standings}
                       easternWildCard={this.state.easternWildCard}
                       westernWildCard={this.state.westernWildCard}
                       metro={this.state.metro}

@@ -151,7 +151,6 @@ main {
 .stats .roster .players-table .active {
   background-color: rgb(148, 38, 38);
   color: #fff;
-  font-weight: 800;
 }
 
 .stats .team-stats {

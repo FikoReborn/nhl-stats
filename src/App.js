@@ -11,6 +11,12 @@ class App extends Component {
     playerInfo: [],
     teams: [],
     standings: [],
+    metro: [],
+    atlantic: [],
+    central: [],
+    pacific: [],
+    easternWildCard: [],
+    westernWildCard: [],
     error: false
   };
 
@@ -41,21 +47,21 @@ class App extends Component {
       let atlantic = [];
       let central = [];
       let pacific = [];
-      let EasternWildcard = [];
-      let WesternWildcard = [];
+      let easternWildCard = [];
+      let westernWildCard = [];
       this.setState({standings:data.records});
       this.state.standings.forEach(division => {
         if (division.conference.name === "Eastern") {
           division.teamRecords.forEach(team => {
             if (team.wildCardRank > 0) {
-              EasternWildcard.push(team)
+              easternWildCard.push(team)
             }
           })
         }
         if (division.conference.name === "Western") {
           division.teamRecords.forEach(team => {
             if (team.wildCardRank > 0) {
-              WesternWildcard.push(team);
+              westernWildCard.push(team);
             }
           })
         }
@@ -71,7 +77,7 @@ class App extends Component {
           }
         })
       })
-      this.setState({EasternWildcard:EasternWildcard, WesternWildcard:WesternWildcard})
+      this.setState({easternWildCard:easternWildCard, westernWildCard:westernWildCard})
       this.setState({metro:metro,atlantic:atlantic,central:central,pacific:pacific})
       }
       )
@@ -139,6 +145,12 @@ class App extends Component {
                   render={() => (
                     <Standings 
                       standings={this.state.standings}
+                      easternWildCard={this.state.easternWildCard}
+                      westernWildCard={this.state.westernWildCard}
+                      metro={this.state.metro}
+                      atlantic={this.state.atlantic}
+                      central={this.state.central}
+                      pacific={this.state.pacific}
                     />
                   )}
                 />

@@ -1,64 +1,46 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import StandingsTable from '../components/StandingsTable';
 import '../App.css';
 
 class Standings extends Component {
     render() {
         return (
             <div className="standings">
-                {this.props.standings.map(division => (
-                    <div className="standings-inner" key={division.division.id}>
-                    {(division !== this.props.standings[1] && division !== this.props.standings[3]) && (
-                        <h2 className="conf-heading">{division.conference.name}</h2>
-                    )}
-                        <table className="standings-table">
-                            <thead>
-                                <tr>
-                                    <th>{division.division.name}</th>
-                                    <th>GP</th>
-                                    <th>W</th>
-                                    <th>L</th>
-                                    <th>OT</th>
-                                    <th>PTS</th>
-                                    <th>ROW</th>
-                                    <th>GF</th>
-                                    <th>GA</th>
-                                    <th>DIFF</th>
-                                    <th>Home</th>
-                                    <th>Away</th>
-                                    <th>S/O</th>
-                                    <th>L10</th>
-                                    <th>Streak</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {division.teamRecords.filter(team => team.divisionRank <= 3).map(currentTeam => (
-                                    <tr key={currentTeam.team.id}>
-                                        <td>{currentTeam.team.name}</td>
-                                        <td>{currentTeam.gamesPlayed}</td>
-                                        <td>{currentTeam.leagueRecord.wins}</td>
-                                        <td>{currentTeam.leagueRecord.losses}</td>
-                                        <td>{currentTeam.leagueRecord.ot}</td>
-                                        <td>{currentTeam.points}</td>
-                                        <td>{currentTeam.row}</td>
-                                        <td>{currentTeam.goalsScored}</td>
-                                        <td>{currentTeam.goalsAgainst}</td>
-                                        <td>{currentTeam.goalsScored - currentTeam.goalsAgainst}</td>
-                                        <td>{currentTeam.records.overallRecords[0].wins} - {currentTeam.records.overallRecords[0].losses} - {currentTeam.records.overallRecords[0].ot}</td>
-                                        <td>{currentTeam.records.overallRecords[1].wins} - {currentTeam.records.overallRecords[1].losses} - {currentTeam.records.overallRecords[1].ot}</td>
-                                        <td>{currentTeam.records.overallRecords[2].wins} - {currentTeam.records.overallRecords[2].losses}</td>
-                                        <td>{currentTeam.records.overallRecords[3].wins} - {currentTeam.records.overallRecords[3].losses} - {currentTeam.records.overallRecords[3].ot}</td>
-                                        <td>{currentTeam.streak.streakCode}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                    <div className="standings-inner">
+                        <h2 className="conf-heading">Eastern Conference</h2>
+                        <StandingsTable
+                            standings={this.props.metro}
+                            division="Metropolitan"
+                        />
+                        <StandingsTable
+                            standings={this.props.atlantic}
+                            division="Atlantic"
+                        />
+
+                        <StandingsTable
+                            standings={this.props.easternWildCard}
+                            division="Wild Card"
+                        />
+
+                        <h2 className="conf-heading">Western Conference</h2>
+                        <StandingsTable
+                            standings={this.props.central}
+                            division="Central"
+                        />
+                        <StandingsTable
+                            standings={this.props.pacific}
+                            division="Pacific"
+                        />
+
+                        <StandingsTable
+                            standings={this.props.westernWildCard}
+                            division="Wild Card"
+                        />
                     </div>
-                ))}
+            
             </div>
-        )
-    }
-}
+        
+    
+        )}}
 
 export default Standings;

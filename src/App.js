@@ -141,7 +141,7 @@ class App extends Component {
                   )}
                 />
                 <Route
-                  path="/standings"
+                  exact path="/"
                   render={() => (
                     <Standings 
                       standings={this.state.standings}

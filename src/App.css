@@ -42,6 +42,13 @@ main {
 
 }
 
+/* Standings */
+
+.standings-table {
+  padding: 20px;
+  border-spacing: 20px;
+}
+
 /* Team Stats */
 
 .stats {

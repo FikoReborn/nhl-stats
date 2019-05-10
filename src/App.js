@@ -10,11 +10,13 @@ class App extends Component {
     playerStats: [],
     playerInfo: [],
     teams: [],
+    standings: [],
     error: false
   };
 
   componentDidMount = () => {
     this.pullTeams();
+    this.pullStandings();
   };
   pullTeams = () => {
     fetch(
@@ -30,6 +32,15 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   };
+
+  pullStandings = () => {
+    fetch('https://statsapi.web.nhl.com/api/v1/standings?expand=standings.record')
+    .then(response => response.json())
+    .then(data => {
+      this.setState({standings:data.records});
+    })
+    .catch(err => console.log(err))
+  }
 
   pullPlayerInfo = (playerid) => {
     this.forceUpdate();
@@ -90,7 +101,9 @@ class App extends Component {
                 <Route
                   path="/standings"
                   render={() => (
-                    <Standings />
+                    <Standings 
+                      standings={this.state.standings}
+                    />
                   )}
                 />
               </main>

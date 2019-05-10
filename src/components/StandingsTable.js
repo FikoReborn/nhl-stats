@@ -4,7 +4,6 @@ import '../App.css';
 
 class StandingsTable extends Component {
     render() {
-        console.log(this.props.standings);
         return (
             <table className="standings-table">
                 <thead>
@@ -38,7 +37,7 @@ class StandingsTable extends Component {
                             <td>{currentTeam.row}</td>
                             <td>{currentTeam.goalsScored}</td>
                             <td>{currentTeam.goalsAgainst}</td>
-                            <td>{currentTeam.goalsScored - currentTeam.goalsAgainst}</td>
+                            <td className={(currentTeam.goalsScored - currentTeam.goalsAgainst) > 0 ? ("diff-positive") : ("diff-negative")}>{(currentTeam.goalsScored - currentTeam.goalsAgainst) > 0 && ("+")}{currentTeam.goalsScored - currentTeam.goalsAgainst}</td>
                             <td>{currentTeam.records.overallRecords[0].wins} - {currentTeam.records.overallRecords[0].losses} - {currentTeam.records.overallRecords[0].ot}</td>
                             <td>{currentTeam.records.overallRecords[1].wins} - {currentTeam.records.overallRecords[1].losses} - {currentTeam.records.overallRecords[1].ot}</td>
                             <td>{currentTeam.records.overallRecords[2].wins} - {currentTeam.records.overallRecords[2].losses}</td>

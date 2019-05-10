@@ -81,6 +81,14 @@ main {
   border-bottom: 5px solid #000;
 }
 
+.standings-table .diff-positive {
+  color: #008000;
+}
+
+.standings-table .diff-negative {
+  color: #ff0000;
+}
+
 /* Team Stats */
 
 .stats {

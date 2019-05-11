@@ -23,6 +23,7 @@ class App extends Component {
     this.pullTeams();
     this.pullStandings();
   };
+
   pullTeams = () => {
     fetch(
       'https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&expand=team.schedule.next&expand=team.schedule.previous&expand=team.stats'
@@ -122,9 +123,11 @@ class App extends Component {
           {this.state.teams.length > 0 ? (
             <div className="nhl-container">
               <nav>
-                <ul className="team-list">
-                  <Teams teams={this.state.teams} />
-                </ul>
+                
+                  <Teams 
+                    teams={this.state.teams} 
+                  />
+                
               </nav>
               <main>
                 <Route

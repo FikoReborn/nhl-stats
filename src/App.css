@@ -26,10 +26,31 @@ a {
 nav {
   width: 15%;
   background-color: rgb(240, 240, 240);
+  box-shadow: 5px 5px 10px #000;
+}
+
+nav.extend {
+  transform: translateX(0);
+}
+
+.menu-container {
+  padding-top: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: 4fr 1.5fr;
+  width: 100%;
+}
+
+.menu-icon {
+  visibility: hidden;
+}
+
+.team-list.show, .nav-title-link.show {
+  visibility: visible;
 }
 
 nav .nav-title-link {
-  padding: 20px 0;
+  padding: 0;
   text-align: center;
   font-size: 1.2em;
 }
@@ -214,4 +235,26 @@ main {
 
 .stats .player-info ul li {
   margin: 10px 0;
+}
+
+/* Adjust for small screens */
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    visibility: visible;
+  }
+  nav {
+    width: 180px;
+    transform: translateX(-70%);
+    z-index: 998;
+    transition: transform 0.3s;
+  }
+
+  main {
+    transform: translateX(-120px);
+  }
+
+  .nav-title-link, .team-list {
+    visibility: hidden;
+  }
 }

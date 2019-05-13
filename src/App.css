@@ -259,8 +259,11 @@ main {
   }
 
   .standings-table th, .standings-table td {
-    padding: 10px;
-    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  .standings-table, .standings-inner {
+    width: 110%;
   }
 
   .nav-title-link, .team-list {
@@ -268,6 +271,12 @@ main {
   }
 
   .hide {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .hide-small {
     display: none;
   }
 }

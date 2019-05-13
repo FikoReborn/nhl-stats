@@ -4,7 +4,7 @@ import '../App.css';
 
 class StandingsTable extends Component {
     render() {
-        let teams = this.props.teams;
+        let width = this.props.windowWidth;
         return (
             <table className="standings-table">
                 <thead>
@@ -21,7 +21,7 @@ class StandingsTable extends Component {
                         <th className="hide">DIFF</th>
                         <th className="hide">Home</th>
                         <th className="hide">Away</th>
-                        <th>S/O</th>
+                        <th className="hide-small">S/O</th>
                         <th className="hide">L10</th>
                         <th>Streak</th>
                     </tr>
@@ -41,7 +41,7 @@ class StandingsTable extends Component {
                             <td className={(currentTeam.goalsScored - currentTeam.goalsAgainst) > 0 ? ("diff-positive hide") : ("diff-negative hide")}>{(currentTeam.goalsScored - currentTeam.goalsAgainst) > 0 && ("+")}{currentTeam.goalsScored - currentTeam.goalsAgainst}</td>
                             <td className="hide">{currentTeam.records.overallRecords[0].wins} - {currentTeam.records.overallRecords[0].losses} - {currentTeam.records.overallRecords[0].ot}</td>
                             <td className="hide">{currentTeam.records.overallRecords[1].wins} - {currentTeam.records.overallRecords[1].losses} - {currentTeam.records.overallRecords[1].ot}</td>
-                            <td>{currentTeam.records.overallRecords[2].wins} - {currentTeam.records.overallRecords[2].losses}</td>
+                            <td className="hide-small">{currentTeam.records.overallRecords[2].wins} - {currentTeam.records.overallRecords[2].losses}</td>
                             <td className="hide">{currentTeam.records.overallRecords[3].wins} - {currentTeam.records.overallRecords[3].losses} - {currentTeam.records.overallRecords[3].ot}</td>
                             <td>{currentTeam.streak.streakCode}</td>
                         </tr>

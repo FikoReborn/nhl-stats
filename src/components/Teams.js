@@ -8,15 +8,6 @@ class Teams extends Component {
         open: false
     }
 
-    componentDidMount = () => {
-        window.addEventListener("resize", this.resize.bind(this));
-        this.resize();
-    }
-
-    resize = () => {
-        this.setState({windowWidth:window.innerWidth})
-    }
-
     handleMenu = () => {
         this.setState({open: !this.state.open})
         const nav = document.getElementsByTagName('nav')[0];
@@ -29,7 +20,7 @@ class Teams extends Component {
 
     render() {
         const teams = this.props.teams;
-        const width = this.state.windowWidth;
+        const width = this.props.windowWidth;
         return (
             <div className="teams">
                 <div className="menu-container">

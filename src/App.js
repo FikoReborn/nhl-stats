@@ -16,10 +16,13 @@ class App extends Component {
     pacific: [],
     easternWildCard: [],
     westernWildCard: [],
-    error: false
+    error: false,
+    windowWidth: 1000
   };
 
   componentDidMount = () => {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
     this.pullTeams();
     this.pullStandings();
   };
@@ -115,6 +118,10 @@ class App extends Component {
     );
   };
 
+  resize = () => {
+    this.setState({windowWidth:window.innerWidth})
+}
+
   render() {
     return (
       <div className="App">
@@ -125,7 +132,8 @@ class App extends Component {
               <nav>
                 
                   <Teams 
-                    teams={this.state.teams} 
+                    teams={this.state.teams}
+                    windowWidth={this.state.windowWidth}
                   />
                 
               </nav>
@@ -153,6 +161,7 @@ class App extends Component {
                       atlantic={this.state.atlantic}
                       central={this.state.central}
                       pacific={this.state.pacific}
+                      windowWidth={this.state.windowWidth}
                     />
                   )}
                 />

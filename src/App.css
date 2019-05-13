@@ -237,6 +237,10 @@ main {
   margin: 10px 0;
 }
 
+.hide {
+  display: show;
+}
+
 /* Adjust for small screens */
 
 @media screen and (max-width: 768px) {
@@ -254,7 +258,16 @@ main {
     transform: translateX(-120px);
   }
 
+  .standings-table th, .standings-table td {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
   .nav-title-link, .team-list {
     visibility: hidden;
+  }
+
+  .hide {
+    display: none;
   }
 }

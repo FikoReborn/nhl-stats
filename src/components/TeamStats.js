@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import sort from 'fast-sort';
 import { Route, withRouter } from 'react-router-dom';
 import PlayerStats from './PlayerStats';
+import TeamOverview from './TeamOverview';
 import '../App.js';
 
 class TeamStats extends Component {
@@ -60,7 +61,7 @@ class TeamStats extends Component {
                         </div>
                         <div className="team-stats">
                             <div className="stat-window">
-                            <table>
+                            {/* <table>
                                 <tbody>
                                     <tr>
                                         <th>Games Played:</th>
@@ -91,10 +92,7 @@ class TeamStats extends Component {
                                         <td>{statValue.penaltyKillPercentage}% ({statPlace.penaltyKillPercentage})</td>
                                     </tr>
                                     </tbody>
-                            </table>
-                            </div>
-                        </div>
-                        <div className="roster">
+                            </table> */}
                             <table className="players-table">
                                 <thead>
                                     <tr>
@@ -115,6 +113,10 @@ class TeamStats extends Component {
                                     ))}
                                 </tbody>
                             </table>
+                            </div>
+                        </div>
+                        <div className="roster">
+
                         </div>
                         <Route
                   path="/teams/:id/player/:pid"
@@ -126,6 +128,13 @@ class TeamStats extends Component {
                             />
                             )}
                             />
+                        <Route exact path="/teams/:id"
+                        render={props => (
+                            <TeamOverview 
+                                team={team}
+                            />
+                        )}
+                    />
                             
                     </div>
                     

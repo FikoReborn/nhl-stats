@@ -76,9 +76,6 @@ class TeamStats extends Component {
                                 </table>
                             </div>
                         </div>
-                        <div className="roster">
-
-                        </div>
                         <Route
                   path="/teams/:id/player/:pid"
                   render={props => (

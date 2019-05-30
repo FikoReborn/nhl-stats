@@ -3,6 +3,7 @@ import sort from 'fast-sort';
 import { Route, withRouter } from 'react-router-dom';
 import PlayerStats from './PlayerStats';
 import TeamOverview from './TeamOverview';
+import TeamRoster from './TeamRoster';
 import '../App.js';
 
 class TeamStats extends Component {
@@ -20,21 +21,21 @@ class TeamStats extends Component {
     render() {
         
         const team = this.props.teams[this.props.id];
-        let teamRoster = team.roster.roster;
+        let roster = team.roster.roster;
         // Sort team roster
-        sort(teamRoster).by([
+        sort(roster).by([
             { desc: t => t.position.type },
             { asc: n => n.person.fullName.substring(n.person.fullName.indexOf(' ')+1) }
         ]);
         let count = 0;
         // Count goalies, then shift/push to end of array
-        teamRoster.forEach(player => {
+        roster.forEach(player => {
             if (player.position.type === "Goalie") {
                 count++;
             }
         });
         for (let i = 0; i < count; i++) {
-            teamRoster.push(teamRoster.shift());
+            roster.push(roster.shift());
         }
         count = 0;
         let statValue;
@@ -52,30 +53,13 @@ class TeamStats extends Component {
                             <h1>{team.name}</h1>
                         </div>
 
-                        <div className="team-stats">
-                            <div className="stat-window">
-                                <table className="players-table">
-                                    <thead>
-                                        <tr>
-                                            <th colSpan="3">Team Roster</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {teamRoster.map(player => (
-                                            <tr 
-                                                key={player.person.id} 
-                                                className={player.person.id === this.state.selectedPlayer ? 'active' : 'player-row'} 
-                                                onClick={() => this.handlePlayer(player.person.id)}
-                                                >
-                                                    <td>{player.jerseyNumber}</td>
-                                                    <td>{player.person.fullName}</td>
-                                                    <td>{player.position.abbreviation}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        <TeamRoster 
+                            roster={roster}
+                            handlePlayer={this.handlePlayer}
+                            pullPlayerInfo={this.props.pullPlayerInfo}
+                            pullPlayerStats={this.props.pullPlayerStats}
+                            selectedPlayer={this.state.selectedPlayer}
+                        />
                         <Route
                   path="/teams/:id/player/:pid"
                   render={props => (

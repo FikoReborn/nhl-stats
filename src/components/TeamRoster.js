@@ -4,9 +4,11 @@ import '../App.js';
 class TeamRoster extends Component {
     render() {
         const roster = this.props.roster;
+        let windowWidth = this.props.windowWidth;
         return (
             <div className="team-stats">
                     <div className="stat-window">
+                    <div className="vertical">Roster</div>
                         <table className="players-table">
                             <thead>
                                 <tr>

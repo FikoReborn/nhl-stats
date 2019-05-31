@@ -1,3 +1,8 @@
+html, body {
+  overflow-x: hidden;
+}
+
+
 a {
   text-decoration: none;
   color: #000;
@@ -132,10 +137,27 @@ main {
   grid-row: 4 / 5;
 }
 
+.vertical {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  float: left;
+  padding: 10px 5px 10px 5px;
+  background-color: #000;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 20px 0 0 20px;
+  cursor: pointer;
+}
+
 .players-table {
   border-spacing: 0;
   border: 1px solid #000;
-  border-radius: 20px 20px 0 0;
+  border-radius: 0 20px 0 0;
+}
+
+.players-table thead {
+  display: none;
+  /* Temporary until I make updates for accessibility */
 }
 
 .players-table a {
@@ -235,6 +257,12 @@ main {
     transition: transform 0.3s;
   }
 
+  .team-stats {
+    z-index: 998;
+    transform: translateX(2000);
+    transition: transform 0.3s;
+  }
+
   main {
     transform: translateX(-120px);
   }
@@ -254,6 +282,8 @@ main {
   .hide {
     display: none;
   }
+
+
 }
 
 @media screen and (max-width: 525px) {

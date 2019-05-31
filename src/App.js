@@ -148,6 +148,7 @@ class App extends Component {
                       pullPlayerInfo={this.pullPlayerInfo}
                       pullPlayerStats={this.pullPlayerStats}
                       id={props.match.params.id}
+                      windowWidth={this.state.windowWidth}
                     />
                   )}
                 />

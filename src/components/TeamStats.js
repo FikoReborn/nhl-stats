@@ -59,6 +59,7 @@ class TeamStats extends Component {
                             pullPlayerInfo={this.props.pullPlayerInfo}
                             pullPlayerStats={this.props.pullPlayerStats}
                             selectedPlayer={this.state.selectedPlayer}
+                            windowWidth={this.props.windowWidth}
                         />
                         <Route
                   path="/teams/:id/player/:pid"

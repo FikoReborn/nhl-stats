@@ -152,7 +152,6 @@ main {
 .players-table {
   border-spacing: 0;
   border: 1px solid #000;
-  border-radius: 0 20px 0 0;
 }
 
 .players-table thead {
@@ -178,6 +177,7 @@ main {
 
 .players-table .player-row {
   padding: 15px;
+  background-color: #fff;
 }
 
 .players-table .player-row:hover {
@@ -191,10 +191,22 @@ main {
   color: #fff;
 }
 
-.team-stats {
+.rosterVisible {
   display: flex;
   flex-wrap: nowrap;
   padding-top: 20px;
+  margin-left: auto;
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.rosterNotVisible {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 20px;
+  margin-left: auto;
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
 }
 
 .player-info {
@@ -261,8 +273,22 @@ main {
     grid-column: 1 / 3;
   }
 
-  .team-stats {
+  .rosterVisible {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    margin-left: -266px;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+
+  .rosterNotVisible {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
     margin-left: auto;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
   }
 
   .stat-window {
@@ -270,7 +296,14 @@ main {
   }
 }
 
+.showRoster {
+  transform: translateX(2000);
+}
+
 @media screen and (max-width: 768px) {
+  .vertical {
+    cursor: pointer;
+  }
   .menu-icon {
     visibility: visible;
   }
@@ -281,10 +314,24 @@ main {
     transition: transform 0.3s;
   }
 
-  .team-stats {
+  .rosterVisible {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    margin-left: -266px;
     z-index: 998;
-    transform: translateX(2000);
-    transition: transform 0.3s;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+
+  .rosterNotVisible {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    margin-left: auto;
+    z-index: 998;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
   }
 
   .standings-table th, .standings-table td {

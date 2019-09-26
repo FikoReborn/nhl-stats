@@ -15,7 +15,7 @@ class StandingsTable extends Component {
                         <th>L</th>
                         <th>OT</th>
                         <th>PTS</th>
-                        <th>ROW</th>
+                        <th className="hide">ROW</th>
                         <th className="hide">GF</th>
                         <th className="hide">GA</th>
                         <th className="hide">DIFF</th>
@@ -23,7 +23,7 @@ class StandingsTable extends Component {
                         <th className="hide">Away</th>
                         <th className="hide-small">S/O</th>
                         <th className="hide">L10</th>
-                        <th>Streak</th>
+                        <th className="hide">Streak</th>
                     </tr>
                 </thead>
                 <tbody>

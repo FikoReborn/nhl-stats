@@ -35,7 +35,7 @@ class StandingsTable extends Component {
                             <td>{currentTeam.leagueRecord.losses}</td>
                             <td>{currentTeam.leagueRecord.ot}</td>
                             <td>{currentTeam.points}</td>
-                            <td>{currentTeam.row}</td>
+                            <td className="hide">{currentTeam.row}</td>
                             <td className="hide">{currentTeam.goalsScored}</td>
                             <td className="hide">{currentTeam.goalsAgainst}</td>
                             <td className={(currentTeam.goalsScored - currentTeam.goalsAgainst) > 0 ? ("diff-positive hide") : ("diff-negative hide")}>{(currentTeam.goalsScored - currentTeam.goalsAgainst) > 0 && ("+")}{currentTeam.goalsScored - currentTeam.goalsAgainst}</td>
@@ -43,7 +43,7 @@ class StandingsTable extends Component {
                             <td className="hide">{currentTeam.records.overallRecords[1].wins} - {currentTeam.records.overallRecords[1].losses} - {currentTeam.records.overallRecords[1].ot}</td>
                             <td className="hide-small">{currentTeam.records.overallRecords[2].wins} - {currentTeam.records.overallRecords[2].losses}</td>
                             <td className="hide">{currentTeam.records.overallRecords[3].wins} - {currentTeam.records.overallRecords[3].losses} - {currentTeam.records.overallRecords[3].ot}</td>
-                            <td>{currentTeam.streak.streakCode}</td>
+                            <td className="hide">{currentTeam.streak.streakCode}</td>
                         </tr>
                     ))}
                 </tbody>

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/nhl-stats/static/css/main.4c6949f0.chunk.css",
-    "main.js": "/nhl-stats/static/js/main.df7c63ff.chunk.js",
-    "main.js.map": "/nhl-stats/static/js/main.df7c63ff.chunk.js.map",
+    "main.js": "/nhl-stats/static/js/main.d1cb11f2.chunk.js",
+    "main.js.map": "/nhl-stats/static/js/main.d1cb11f2.chunk.js.map",
     "runtime~main.js": "/nhl-stats/static/js/runtime~main.d4b2a7e6.js",
     "runtime~main.js.map": "/nhl-stats/static/js/runtime~main.d4b2a7e6.js.map",
     "static/js/2.dcf8c82d.chunk.js": "/nhl-stats/static/js/2.dcf8c82d.chunk.js",
     "static/js/2.dcf8c82d.chunk.js.map": "/nhl-stats/static/js/2.dcf8c82d.chunk.js.map",
     "index.html": "/nhl-stats/index.html",
-    "precache-manifest.7dca74c9df2e1c3be2b43cba52a7be2b.js": "/nhl-stats/precache-manifest.7dca74c9df2e1c3be2b43cba52a7be2b.js",
+    "precache-manifest.6cb0856499e7fc10a2c45895a424b4f8.js": "/nhl-stats/precache-manifest.6cb0856499e7fc10a2c45895a424b4f8.js",
     "service-worker.js": "/nhl-stats/service-worker.js",
     "static/css/main.4c6949f0.chunk.css.map": "/nhl-stats/static/css/main.4c6949f0.chunk.css.map",
     "static/media/ANA.svg": "/nhl-stats/static/media/ANA.9bc562de.svg",

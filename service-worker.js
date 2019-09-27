@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/nhl-stats/precache-manifest.129becb056bd00b58538d3c7b579a3a9.js"
+  "/nhl-stats/precache-manifest.cea5041b913758d8a1a0905db61341fa.js"
 );
 
 self.addEventListener('message', (event) => {

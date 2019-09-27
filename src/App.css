@@ -74,30 +74,28 @@ main {
 
 /* Standings */
 
+
+
 .standings-table {
   border-spacing: 0;
   padding-bottom: 50px;
   border-left: 1px solid #000;
   padding-left: 20px;
   width: 95%;
-  box-sizing: border-box;
 }
 
 .standings-table thead {
   background-color: #000;
   color: #fff;
-  box-sizing: border-box;
 }
 
 .standings-table th {
   padding: 20px 20px 20px 10px;
-  box-sizing: border-box;
 }
 
 .standings-table td {
   border-bottom: 1px dashed #000;
   padding: 20px 40px 20px 10px;
-  box-sizing: border-box;
 }
 
 .standings-table td:nth-child(even) {
@@ -117,6 +115,14 @@ main {
 
 .standings-table .diff-negative {
   color: #ff0000;
+}
+
+.standings-table {
+  table-layout: fixed;
+}
+
+.div-name {
+  width: 30%;
 }
 
 /* Team Stats */
@@ -294,6 +300,9 @@ main {
   .stat-window {
     transform: translateX(252px);
   }
+  .hide {
+    display: none;
+  }
 }
 
 .showRoster {
@@ -339,7 +348,7 @@ main {
   }
 
   .standings-table, .standings-inner {
-    width: 110%;
+    width: 100%;
   }
 
   .nav-title-link, .team-list {
@@ -353,7 +362,6 @@ main {
   main {
     position: absolute;
     left: 0;
-    width: 65%;
   }
 
 }

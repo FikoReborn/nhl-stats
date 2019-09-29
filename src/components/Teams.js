@@ -30,7 +30,9 @@ class Teams extends Component {
         const dropdownOptions = this.props.dropdownOptions;
         return (
             <div className="teams">
-                <div className="team-selector"><h4 className="selector-title">Team: </h4>
+                <div className="team-selector"><h4 className="selector-title">
+                {width > 725 && "Team"}
+                </h4>
                     <Select
                         placeholder="Select a team.."
                         onChange={this.handleChange}

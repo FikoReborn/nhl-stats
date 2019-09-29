@@ -53,8 +53,9 @@ nav {
   background-color: rgb(212, 212, 212);
   color: #000;
   border-bottom: 3px solid #000;
-  border-radius: 0 0 50px 50px;
+  border-radius: 0 0 40px 40px;
   padding-left: 50px;
+  box-sizing: border-box;
 }
 
 nav a {
@@ -194,7 +195,6 @@ main {
 .players-table th {
   padding: 10px;
   background-color: #000;
-  border-radius: 20px 20px 0 0;
   color: #fff;
   text-align: center;
 }
@@ -337,6 +337,19 @@ main {
     padding-left: 0;
   }
 
+  .logo-container {
+    font-size: 0.8em;
+  }
+
+  .team-logo-stats {
+    height: 60px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 180px;
+    width: 100%;
+  }
+
   /* .vertical {
     cursor: pointer;
   }
@@ -402,6 +415,23 @@ main {
   }
   .players-table td {
     padding: 5px;
+  }
+  .menu-container {
+    padding-left: 10px;
+  }
+  nav {
+    border-radius: 0;
+    padding-left: 5px;
+  }
+  .players-table thead {
+    display: contents;
+    /* Temporary until I make updates for accessibility */
+  }
+  .vertical {
+    display: none;
+  }
+  .players-table, .players-table th {
+    border-radius: 20px 20px 0 0;
   }
 }
 

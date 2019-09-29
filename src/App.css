@@ -8,7 +8,24 @@ a {
   color: #000;
   font-weight: bold;
 }
+.teams {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}
 
+.team-selector {
+  padding-top: 5px;
+  width: 400px;
+  position: relative;
+  margin-top: auto;
+}
+.selector-title {
+  margin: 0;
+  margin-top: 8px;
+  float: left;
+  padding-right: 20px;
+}
 .team-list {
   list-style: none;
   padding: 0;
@@ -46,11 +63,10 @@ nav.extend {
 }
 
 .menu-container {
-  padding-top: 20px;
-  padding-right: 20px;
-  display: grid;
-  grid-template-columns: 4fr 1.5fr;
-  width: 100%;
+  padding-top: 10px;
+  padding-left: 100px;
+  display: flex;
+  align-content: center;
 }
 
 .menu-icon {
@@ -312,7 +328,7 @@ main {
   transform: translateX(2000);
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .vertical {
     cursor: pointer;
   }
@@ -367,7 +383,7 @@ main {
     left: 0;
   }
 
-}
+} */
 
 @media screen and (max-width: 525px) {
   .hide-small {

@@ -30,23 +30,16 @@ class Teams extends Component {
         const dropdownOptions = this.props.dropdownOptions;
         return (
             <div className="teams">
+                <div className="team-selector"><h4 className="selector-title">Team: </h4>
+                    <Select
+                        placeholder="Select a team.."
+                        onChange={this.handleChange}
+                        options={dropdownOptions}
+                    />
+                </div>
                 <div className="menu-container">
                     <span className="nav-title-link"><Link to="/">Standings</Link></span>   
                 </div>
-                <Select
-                    placeholder="Select a team.."
-                    onChange={this.handleChange}
-                    options={dropdownOptions}
-                />
-                {/* <ul className="team-list">
-                    {teams.map(team => (
-                        <li key={team.name}>
-                            <Link to={`/teams/${team.id}`}>
-                                <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo" /> {(width <= 768) ? (team.abbreviation) : (team.name)}
-                            </Link>
-                        </li>
-                    ))}
-                </ul> */}
             </div>
         )
     }

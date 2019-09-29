@@ -26,16 +26,19 @@ a {
 .nhl-container {
   display: flex;
   flex-wrap: nowrap;
-  width: 100%
+  width: 100%;
+  flex-direction: column;
 }
 
 nav {
-  width: 15%;
-  background-color: #000;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(212, 212, 212);
+  color: #000;
 }
 
 nav a {
-  color: #fff;
+  color: #000;
 }
 
 nav.extend {

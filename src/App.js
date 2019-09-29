@@ -7,6 +7,7 @@ import './App.css';
 
 class App extends Component {
   state = {
+    dropdownOptions: [],
     playerStats: [],
     playerInfo: [],
     teams: [],
@@ -34,10 +35,17 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         let newTeams = data.teams;
+        let dropdownOptions = [];
         for (let i = 0; i < newTeams.length; i++) {
           newTeams[i].id = i;
+          dropdownOptions.push({
+            value: newTeams[i].id,
+            label: <div><img src={require(`./img/${newTeams[i].abbreviation}.svg`)} className="team-logo"/> {newTeams[i].name}</div>,
+            image: {avatar: true, src: 'img/' + newTeams[i].abbreviation + '.svg'}
+          })
         }
         this.setState({teams:newTeams});
+        this.setState({dropdownOptions:dropdownOptions})
       })
       .catch(err => console.log(err));
   };
@@ -134,6 +142,7 @@ class App extends Component {
                   <Teams 
                     teams={this.state.teams}
                     windowWidth={this.state.windowWidth}
+                    dropdownOptions={this.state.dropdownOptions}
                   />
                 
               </nav>

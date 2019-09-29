@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import HamburgerMenu from 'react-hamburger-menu';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import Select from 'react-select';
 import '../App.css';
 
 class Teams extends Component {
     state = {
-        open: false
+        open: false,
+    }
+
+    handleChange = selectedTeam => {
+        this.setState({ selectedTeam});
+        this.props.history.push('/teams/' + selectedTeam.value);
     }
 
     handleMenu = () => {
@@ -21,18 +27,18 @@ class Teams extends Component {
     render() {
         const teams = this.props.teams;
         const width = this.props.windowWidth;
+        const dropdownOptions = this.props.dropdownOptions;
         return (
             <div className="teams">
                 <div className="menu-container">
                     <span className="nav-title-link"><Link to="/">Standings</Link></span>   
-                    <div className="menu-icon">
-                        <HamburgerMenu 
-                            isOpen={this.state.open}
-                            menuClicked={this.handleMenu.bind(this)}
-                        />
-                    </div>
                 </div>
-                <ul className="team-list">
+                <Select
+                    placeholder="Select a team.."
+                    onChange={this.handleChange}
+                    options={dropdownOptions}
+                />
+                {/* <ul className="team-list">
                     {teams.map(team => (
                         <li key={team.name}>
                             <Link to={`/teams/${team.id}`}>
@@ -40,10 +46,10 @@ class Teams extends Component {
                             </Link>
                         </li>
                     ))}
-                </ul>
+                </ul> */}
             </div>
         )
     }
 }
 
-export default Teams;
+export default withRouter(Teams);

@@ -140,14 +140,6 @@ main {
   color: #ff0000;
 }
 
-.standings-table {
-  table-layout: fixed;
-}
-
-.div-name {
-  width: 30%;
-}
-
 /* Team Stats */
 
 .stats {
@@ -349,6 +341,9 @@ main {
     grid-template-columns: 1fr 180px;
     width: 100%;
   }
+  .hide {
+    display: none;
+  }
 
   /* .vertical {
     cursor: pointer;
@@ -393,10 +388,6 @@ main {
 
   .nav-title-link, .team-list {
     visibility: hidden;
-  }
-
-  .hide {
-    display: none;
   }
 
   main {

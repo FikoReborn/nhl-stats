@@ -431,6 +431,10 @@ main {
   .standings .standings-inner td {
     padding: 10px;
   }
+
+  .rosterVisible {
+    padding-left: 30px;
+  }
 }
 
 @media screen and (max-width: 525px) {

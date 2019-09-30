@@ -7,9 +7,15 @@ This project was made from scratch by me mainly to see what I can do with a larg
 
 ## How to Run
 
-Either try the online version of the app, [here](https://fikoreborn.github.io/nhl-stats) or clone to your local machine and with [NPM](https://www.npmjs.com/) installed, run with:
+Either try the online version of the app, [here](https://fikoreborn.github.io/nhl-stats) or clone to your local machine and with [NPM](https://www.npmjs.com/) installed:
+
+`npm install`
+
+This installs any dependencies
 
 `npm start`
+
+Now you are ready to go and the app should open in a new browser window/tab. 
 
 ## Instructions
 

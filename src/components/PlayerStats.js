@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import '../App.js';
 
 class PlayerStats extends Component {
-    state = {
-        error: false,
-      };
-
     render() {
         const player = this.props.playerInfo;
         const playerStats = this.props.playerStats;

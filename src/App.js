@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Teams from './components/Teams';
 import TeamStats from './components/TeamStats';
 import Standings from './components/Standings';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -22,8 +22,6 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    window.addEventListener("resize", this.resize.bind(this));
-    this.resize();
     this.pullTeams();
     this.pullStandings();
   };
@@ -40,7 +38,7 @@ class App extends Component {
           newTeams[i].id = i;
           dropdownOptions.push({
             value: newTeams[i].id,
-            label: <div><img src={require(`./img/${newTeams[i].abbreviation}.svg`)} className="team-logo"/> {newTeams[i].name}</div>,
+            label: <div><img src={require(`./img/${newTeams[i].abbreviation}.svg`)} className="team-logo" alt={newTeams[i].name}/> {newTeams[i].name}</div>,
             image: {avatar: true, src: 'img/' + newTeams[i].abbreviation + '.svg'}
           })
         }
@@ -126,9 +124,10 @@ class App extends Component {
     );
   };
 
-  resize = () => {
-    this.setState({windowWidth:window.innerWidth})
-}
+  handleTeam = selectedTeam => {
+    this.setState({ selectedTeam});
+    this.props.history.push('/teams/' + selectedTeam.value);
+  }
 
   render() {
     return (
@@ -141,8 +140,8 @@ class App extends Component {
                 
                   <Teams 
                     teams={this.state.teams}
-                    windowWidth={this.state.windowWidth}
                     dropdownOptions={this.state.dropdownOptions}
+                    handleTeam={this.handleTeam}
                   />
                 
               </nav>
@@ -157,7 +156,6 @@ class App extends Component {
                       pullPlayerInfo={this.pullPlayerInfo}
                       pullPlayerStats={this.pullPlayerStats}
                       id={props.match.params.id}
-                      windowWidth={this.state.windowWidth}
                     />
                   )}
                 />
@@ -171,7 +169,6 @@ class App extends Component {
                       atlantic={this.state.atlantic}
                       central={this.state.central}
                       pacific={this.state.pacific}
-                      windowWidth={this.state.windowWidth}
                     />
                   )}
                 />
@@ -186,4 +183,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

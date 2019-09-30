@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 class StandingsTable extends Component {
     render() {
-        let width = this.props.windowWidth;
         return (
             <table className="standings-table">
                 <thead>

@@ -9,7 +9,6 @@ class TeamOverview extends Component {
     render() {
         const team = this.props.team;
         const stats = this.props.team.teamStats[0].splits[0].stat;
-        const statsPlace = this.props.team.teamStats[0].splits[1].stat;
         return (
             <div className="player-info" key={team.name}>
                 

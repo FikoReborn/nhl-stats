@@ -21,13 +21,6 @@ a {
   margin-top: auto;
 }
 
-.selector-title {
-  margin: 0;
-  margin-top: 8px;
-  float: left;
-  padding-right: 20px;
-}
-
 .team-list {
   list-style: none;
   padding: 0;
@@ -126,7 +119,6 @@ main {
 .standings-table td:nth-child(even) {
   background-color: #ccc;
 }
-
 .standings-table td:nth-child(1) {
   font-weight: 800;
 }
@@ -213,7 +205,7 @@ main {
   color: #fff;
 }
 
-.rosterVisible {
+.team-roster {
   display: flex;
   flex-wrap: nowrap;
   padding-top: 20px;
@@ -309,25 +301,32 @@ main {
   .player-info .player-inner {
     font-size: 0.8em;
   }
+
   .stat-window {
     font-size: 0.6em;
   }
+
   .players-table td {
     padding: 5px;
   }
+
   .menu-container {
     padding-left: 10px;
   }
+
   nav {
     border-radius: 0;
     padding-left: 5px;
   }
+
   .players-table thead {
     display: contents;
   }
+
   .vertical {
     display: none;
   }
+
   .players-table, .players-table th {
     border-radius: 20px 20px 0 0;
   }

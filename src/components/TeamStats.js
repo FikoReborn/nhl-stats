@@ -38,12 +38,6 @@ class TeamStats extends Component {
             roster.push(roster.shift());
         }
         count = 0;
-        let statValue;
-        let statPlace;
-        if (team) {
-            statValue = team.teamStats[0].splits[0].stat;
-            statPlace = team.teamStats[0].splits[1].stat;
-        }
         return (
             <div>
                 {team ? (

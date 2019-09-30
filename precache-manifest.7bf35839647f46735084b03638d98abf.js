@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3564485b087605bb903adb0d5ee40899",
+    "revision": "88a2bd1ebe1163d59088536097b2dfb3",
     "url": "/nhl-stats/index.html"
   },
   {
-    "revision": "324d71da9b8513ee847f",
-    "url": "/nhl-stats/static/css/main.a6539a78.chunk.css"
+    "revision": "ceb63f22b743f7806f60",
+    "url": "/nhl-stats/static/css/main.3dcbe775.chunk.css"
   },
   {
     "revision": "df409d40ce64a1900dec",
     "url": "/nhl-stats/static/js/2.848ab9bd.chunk.js"
   },
   {
-    "revision": "324d71da9b8513ee847f",
+    "revision": "ceb63f22b743f7806f60",
     "url": "/nhl-stats/static/js/main.3b1f412a.chunk.js"
   },
   {

@@ -416,13 +416,20 @@ main {
   }
   .players-table thead {
     display: contents;
-    /* Temporary until I make updates for accessibility */
   }
   .vertical {
     display: none;
   }
   .players-table, .players-table th {
     border-radius: 20px 20px 0 0;
+  }
+
+  .standings .standings-inner {
+    font-size: 0.6em;
+  }
+
+  .standings .standings-inner td {
+    padding: 10px;
   }
 }
 

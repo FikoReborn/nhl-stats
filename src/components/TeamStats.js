@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import sort from 'fast-sort';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Link } from 'react-router-dom';
 import PlayerStats from './PlayerStats';
 import TeamOverview from './TeamOverview';
 import TeamRoster from './TeamRoster';
@@ -44,7 +44,7 @@ class TeamStats extends Component {
                     <div className="stats">
                         <div className="logo-container">
                             <img src={require(`../img/${team.abbreviation}.svg`)} alt={team.name} className="team-logo-stats" />
-                            <h1>{team.name}</h1>
+                            <h1><Link to={`/teams/${team.id}`}>{team.name}</Link></h1>
                         </div>
 
                         <TeamRoster 

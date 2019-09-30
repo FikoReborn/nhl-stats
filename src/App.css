@@ -176,6 +176,7 @@ main {
 
 .players-table a {
   color: #000;
+  user-select: none;
 }
 
 .players-table th {
@@ -187,6 +188,11 @@ main {
 
 .players-table td {
   padding: 10px;
+  user-select: none;
+}
+
+.players-table tr {
+  user-select: none;
 }
 
 .players-table .player-row {

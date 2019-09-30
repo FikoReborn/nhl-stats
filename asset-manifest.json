@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/nhl-stats/static/css/main.f9f500ef.chunk.css",
+    "main.css": "/nhl-stats/static/css/main.57cdd66c.chunk.css",
     "main.js": "/nhl-stats/static/js/main.0e1a29f7.chunk.js",
     "main.js.map": "/nhl-stats/static/js/main.0e1a29f7.chunk.js.map",
     "runtime~main.js": "/nhl-stats/static/js/runtime~main.d4b2a7e6.js",
@@ -8,9 +8,9 @@
     "static/js/2.ca2e777b.chunk.js": "/nhl-stats/static/js/2.ca2e777b.chunk.js",
     "static/js/2.ca2e777b.chunk.js.map": "/nhl-stats/static/js/2.ca2e777b.chunk.js.map",
     "index.html": "/nhl-stats/index.html",
-    "precache-manifest.8d2786f4922a33c61431cfd87c8985fb.js": "/nhl-stats/precache-manifest.8d2786f4922a33c61431cfd87c8985fb.js",
+    "precache-manifest.767e8822a58b9fd4b074cb40bf94a8fb.js": "/nhl-stats/precache-manifest.767e8822a58b9fd4b074cb40bf94a8fb.js",
     "service-worker.js": "/nhl-stats/service-worker.js",
-    "static/css/main.f9f500ef.chunk.css.map": "/nhl-stats/static/css/main.f9f500ef.chunk.css.map",
+    "static/css/main.57cdd66c.chunk.css.map": "/nhl-stats/static/css/main.57cdd66c.chunk.css.map",
     "static/media/ANA.svg": "/nhl-stats/static/media/ANA.9bc562de.svg",
     "static/media/ARI.svg": "/nhl-stats/static/media/ARI.8f690ed8.svg",
     "static/media/BOS.svg": "/nhl-stats/static/media/BOS.68807e3d.svg",

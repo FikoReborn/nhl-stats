@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/nhl-stats/static/css/main.8d2c8562.chunk.css",
-    "main.js": "/nhl-stats/static/js/main.6129a30f.chunk.js",
-    "main.js.map": "/nhl-stats/static/js/main.6129a30f.chunk.js.map",
+    "main.css": "/nhl-stats/static/css/main.6fe1d69b.chunk.css",
+    "main.js": "/nhl-stats/static/js/main.f4d14071.chunk.js",
+    "main.js.map": "/nhl-stats/static/js/main.f4d14071.chunk.js.map",
     "runtime~main.js": "/nhl-stats/static/js/runtime~main.d4b2a7e6.js",
     "runtime~main.js.map": "/nhl-stats/static/js/runtime~main.d4b2a7e6.js.map",
-    "static/js/2.9a42f151.chunk.js": "/nhl-stats/static/js/2.9a42f151.chunk.js",
-    "static/js/2.9a42f151.chunk.js.map": "/nhl-stats/static/js/2.9a42f151.chunk.js.map",
+    "static/js/2.6ecef60e.chunk.js": "/nhl-stats/static/js/2.6ecef60e.chunk.js",
+    "static/js/2.6ecef60e.chunk.js.map": "/nhl-stats/static/js/2.6ecef60e.chunk.js.map",
     "index.html": "/nhl-stats/index.html",
-    "precache-manifest.9f96d743513929deda2b10a86c2ce597.js": "/nhl-stats/precache-manifest.9f96d743513929deda2b10a86c2ce597.js",
+    "precache-manifest.ca5b3c79fb532c1286ad0ed0f276f28f.js": "/nhl-stats/precache-manifest.ca5b3c79fb532c1286ad0ed0f276f28f.js",
     "service-worker.js": "/nhl-stats/service-worker.js",
-    "static/css/main.8d2c8562.chunk.css.map": "/nhl-stats/static/css/main.8d2c8562.chunk.css.map",
+    "static/css/main.6fe1d69b.chunk.css.map": "/nhl-stats/static/css/main.6fe1d69b.chunk.css.map",
     "static/media/ANA.svg": "/nhl-stats/static/media/ANA.9bc562de.svg",
     "static/media/ARI.svg": "/nhl-stats/static/media/ARI.8f690ed8.svg",
     "static/media/BOS.svg": "/nhl-stats/static/media/BOS.68807e3d.svg",
@@ -39,7 +39,7 @@
     "static/media/TBL.svg": "/nhl-stats/static/media/TBL.7f35b009.svg",
     "static/media/TOR.svg": "/nhl-stats/static/media/TOR.20b99b88.svg",
     "static/media/VAN.svg": "/nhl-stats/static/media/VAN.be932ad3.svg",
-    "static/media/VGK.svg": "/nhl-stats/static/media/VGK.d5d2a6d1.svg",
+    "static/media/VGK.svg": "/nhl-stats/static/media/VGK.08ecefc6.svg",
     "static/media/WPG.svg": "/nhl-stats/static/media/WPG.eae9751f.svg",
     "static/media/WSH.svg": "/nhl-stats/static/media/WSH.95b22f49.svg"
   }

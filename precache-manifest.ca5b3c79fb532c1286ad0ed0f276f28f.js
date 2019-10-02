@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "023843aea27c2c211db2ca60b4e64f3a",
+    "revision": "fa3874105c1f80beff9133e6270a826e",
     "url": "/nhl-stats/index.html"
   },
   {
-    "revision": "9a35abf211d44d1b1a24",
-    "url": "/nhl-stats/static/css/main.8d2c8562.chunk.css"
+    "revision": "f96bf480186415f50c18",
+    "url": "/nhl-stats/static/css/main.6fe1d69b.chunk.css"
   },
   {
-    "revision": "d23f8d4b8a35060c7a4f",
-    "url": "/nhl-stats/static/js/2.9a42f151.chunk.js"
+    "revision": "6340a53e0a4b30ca43ec",
+    "url": "/nhl-stats/static/js/2.6ecef60e.chunk.js"
   },
   {
-    "revision": "9a35abf211d44d1b1a24",
-    "url": "/nhl-stats/static/js/main.6129a30f.chunk.js"
+    "revision": "f96bf480186415f50c18",
+    "url": "/nhl-stats/static/js/main.f4d14071.chunk.js"
   },
   {
     "revision": "88a7c26e1c430ed22be6",
@@ -132,8 +132,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/nhl-stats/static/media/VAN.be932ad3.svg"
   },
   {
-    "revision": "d5d2a6d1a9d472785d79c82afaab8637",
-    "url": "/nhl-stats/static/media/VGK.d5d2a6d1.svg"
+    "revision": "08ecefc67493b9b79cb4ddb575ebe77b",
+    "url": "/nhl-stats/static/media/VGK.08ecefc6.svg"
   },
   {
     "revision": "eae9751f8276b09c9103ba4bc1334491",

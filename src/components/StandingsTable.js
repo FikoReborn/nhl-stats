@@ -3,7 +3,6 @@ import '../App.css';
 
 class StandingsTable extends Component {
     render() {
-        const currentTeam = this.props.standings;
         return (
             <table className="standings-table">
                 <thead>

@@ -11,36 +11,30 @@ class Standings extends Component {
                         <StandingsTable
                             standings={this.props.metro}
                             division="Metropolitan"
-                            windowWidth={this.props.windowWidth}
                         />
                         <StandingsTable
                             standings={this.props.atlantic}
                             division="Atlantic"
-                            windowWidth={this.props.windowWidth}
                         />
 
                         <StandingsTable
                             standings={this.props.easternWildCard}
                             division="Wild Card"
-                            windowWidth={this.props.windowWidth}
                         />
 
                         <h2 className="conf-heading">Western Conference</h2>
                         <StandingsTable
                             standings={this.props.central}
                             division="Central"
-                            windowWidth={this.props.windowWidth}
                         />
                         <StandingsTable
                             standings={this.props.pacific}
                             division="Pacific"
-                            windowWidth={this.props.windowWidth}
                         />
 
                         <StandingsTable
                             standings={this.props.westernWildCard}
                             division="Wild Card"
-                            windowWidth={this.props.windowWidth}
                         />
                     </div>
             
